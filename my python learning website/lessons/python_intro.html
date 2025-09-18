@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Python - Utsav's Python Learning Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/animations.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="brand">
+                    <div class="logo"></div> Python Learning Hub
+                </div>
+                <button id="mobile-toggle" class="mobile-toggle" aria-label="Toggle Menu">☰</button>
+                <div class="navlinks">
+                    <a href="../index.html#home">Home</a>
+                    <a href="../index.html#modules">Modules</a>
+                    <a href="../index.html#lesson">Lesson</a>
+                    <a href="../index.html#quiz">Quiz</a>
+                    <a href="../index.html#notes">Notes</a>
+                    <a href="../index.html#resources">Resources</a>
+                    <a href="../pages/compiler.html">Compiler</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container lesson-page">
+        <div class="lesson-navigation">
+            <a href="../index.html#modules" class="btn">← Back to Modules</a>
+            <div class="lesson-nav-buttons">
+                <button class="btn" id="prev-lesson" disabled>Previous Lesson</button>
+                <button class="btn" id="next-lesson">Next Lesson: Python Syntax</button>
+            </div>
+        </div>
+
+        <article class="lesson-content">
+            <h1>Introduction to Python</h1>
+            
+            <section class="lesson-section">
+                <h2>What is Python?</h2>
+                <p>Python is a popular programming language created by Guido van Rossum and released in 1991. It is:</p>
+                <ul>
+                    <li>High-level and interpreted - Python code is executed line by line</li>
+                    <li>General-purpose - Used for web development, data analysis, AI, scientific computing, and more</li>
+                    <li>Known for simple, readable syntax - Uses indentation instead of braces</li>
+                    <li>Dynamically typed - No need to declare variable types</li>
+                </ul>
+                <p>Python's design philosophy emphasizes code readability with its notable use of significant whitespace.</p>
+            </section>
+
+            <section class="lesson-section">
+                <h2>Why Learn Python?</h2>
+                <ul>
+                    <li><strong>Easy to Learn:</strong> Simple syntax makes it accessible for beginners</li>
+                    <li><strong>Versatile:</strong> Used in web development, data science, AI, automation, and more</li>
+                    <li><strong>High Demand:</strong> One of the most in-demand programming skills</li>
+                    <li><strong>Large Community:</strong> Extensive libraries, frameworks, and community support</li>
+                    <li><strong>Cross-platform:</strong> Runs on Windows, macOS, Linux, and more</li>
+                </ul>
+            </section>
+
+            <section class="lesson-section">
+                <h2>Your First Python Program</h2>
+                <p>Let's start with the classic "Hello, World!" program:</p>
+                <div class="code-example">
+                    <pre><code>print("Hello, World!")</code></pre>
+                </div>
+                <p>When you run this code, Python will output: <code>Hello, World!</code></p>
+                <p>This simple example demonstrates Python's simplicity - just one line of code to display text!</p>
+            </section>
+
+            <section class="lesson-section">
+                <h2>Python Versions</h2>
+                <p>There are two major Python versions:</p>
+                <ul>
+                    <li><strong>Python 2:</strong> Legacy version, officially discontinued in 2020</li>
+                    <li><strong>Python 3:</strong> Current version with ongoing development and improvements</li>
+                </ul>
+                <p>This tutorial uses Python 3, which has better Unicode support, more intuitive integer division, and many other improvements.</p>
+            </section>
+
+            <section class="lesson-section">
+                <h2>Try It Yourself</h2>
+                <p>Use the editor below to write and run your first Python code:</p>
+                <div class="editor-container">
+                    <div id="lesson-editor" class="editor">print("Hello, World!")
+print("My name is Utsav")
+print("Welcome to Python Learning Hub!")
+
+# Try adding your own print statements below:
+</div>
+                    <div class="editor-controls">
+                        <button class="btn primary" id="run-lesson-code">Run ▶</button>
+                        <button class="btn" id="reset-lesson-code">Reset</button>
+                    </div>
+                    <div class="out" id="lesson-output"></div>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>Key Points</h2>
+                <ul>
+                    <li>Python is a versatile, readable programming language</li>
+                    <li>It's widely used in various fields including web development, data science, and AI</li>
+                    <li>Python code is executed line by line</li>
+                    <li>The <code>print()</code> function displays output</li>
+                    <li>We'll be using Python 3 throughout this tutorial</li>
+                </ul>
+            </section>
+        </article>
+
+        <div class="lesson-navigation bottom">
+            <button class="btn primary" id="mark-lesson-complete">Mark as Complete</button>
+            <div class="lesson-nav-buttons">
+                <button class="btn" id="prev-lesson-bottom" disabled>Previous Lesson</button>
+                <button class="btn" id="next-lesson-bottom">Next Lesson: Python Syntax</button>
+            </div>
+        </div>
+
+        <section class="lesson-quiz">
+            <h2>Quick Quiz</h2>
+            <div id="lesson-quiz-container"></div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">Built for you • Keep practicing daily • v1.0</div>
+    </footer>
+
+    <script src="../assets/js/app.js"></script>
+    <script src="../assets/js/editor.js"></script>
+    <script src="../assets/js/quiz.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize lesson editor
+            if (window.ace) {
+                const editor = ace.edit("lesson-editor");
+                editor.setTheme("ace/theme/monokai");
+                editor.session.setMode("ace/mode/python");
+                
+                // Run code button
+                document.getElementById('run-lesson-code').addEventListener('click', () => {
+                    const code = editor.getValue();
+                    runPythonCode(code, 'lesson-output');
+                });
+                
+                // Reset code button
+                document.getElementById('reset-lesson-code').addEventListener('click', () => {
+                    editor.setValue(`print("Hello, World!")
+print("My name is Utsav")
+print("Welcome to Python Learning Hub!")
+
+# Try adding your own print statements below:
+`);
+                    editor.clearSelection();
+                });
+            }
+            
+            // Load quiz for this lesson
+            if (window.quizSystem) {
+                window.quizSystem.loadQuiz('python_intro');
+            }
+            
+            // Mark lesson complete button
+            document.getElementById('mark-lesson-complete').addEventListener('click', () => {
+                markLessonComplete('python_intro');
+            });
+            
+            // Navigation buttons
+            document.getElementById('next-lesson').addEventListener('click', () => {
+                window.location.href = 'python_syntax.html';
+            });
+            document.getElementById('next-lesson-bottom').addEventListener('click', () => {
+                window.location.href = 'python_syntax.html';
+            });
+        });
+        
+        // Function to run Python code using Skulpt
+        function runPythonCode(code, outputId) {
+            const output = document.getElementById(outputId);
+            output.innerHTML = '';
+            
+            function outf(text) {
+                output.innerHTML += text;
+            }
+            
+            function builtinRead(x) {
+                if (Sk.builtinFiles === undefined || Sk.builtinFiles["files"][x] === undefined)
+                    throw "File not found: '" + x + "'";
+                return Sk.builtinFiles["files"][x];
+            }
+            
+            Sk.configure({
+                output: outf,
+                read: builtinRead,
+                __future__: Sk.python3
+            });
+            
+            try {
+                Sk.importMainWithBody("<stdin>", false, code, true);
+            } catch (e) {
+                output.innerHTML += `<span style="color: red">${e.toString()}</span>`;
+            }
+        }
+        
+        // Function to mark lesson as complete
+        function markLessonComplete(lessonId) {
+            // Get completed lessons from localStorage
+            const completedLessons = JSON.parse(localStorage.getItem('completedLessons')) || [];
+            
+            // Add this lesson if not already completed
+            if (!completedLessons.includes(lessonId)) {
+                completedLessons.push(lessonId);
+                localStorage.setItem('completedLessons', JSON.stringify(completedLessons));
+                
+                // Update UI
+                const button = document.getElementById('mark-lesson-complete');
+                button.textContent = 'Completed!';
+                button.disabled = true;
+                
+                // Update streak
+                updateStreak();
+                
+                // Update lesson count
+                const lessonCount = document.getElementById('kpi-lessons');
+                if (lessonCount) {
+                    lessonCount.textContent = completedLessons.length;
+                }
+            }
+        }
+        
+        // Function to update streak
+        function updateStreak() {
+            const today = new Date().toISOString().split('T')[0];
+            const streakData = JSON.parse(localStorage.getItem('streakData')) || {
+                lastVisit: null,
+                currentStreak: 0
+            };
+            
+            if (streakData.lastVisit !== today) {
+                if (isConsecutiveDay(streakData.lastVisit, today)) {
+                    streakData.currentStreak += 1;
+                } else if (streakData.lastVisit === null) {
+                    streakData.currentStreak = 1;
+                } else {
+                    streakData.currentStreak = 1; // Reset streak if not consecutive
+                }
+                
+                streakData.lastVisit = today;
+                localStorage.setItem('streakData', JSON.stringify(streakData));
+                
+                // Update streak display
+                const streakElement = document.getElementById('kpi-streak');
+                if (streakElement) {
+                    streakElement.textContent = `${streakData.currentStreak} days`;
+                }
+            }
+        }
+        
+        // Helper function to check if dates are consecutive
+        function isConsecutiveDay(lastVisit, today) {
+            if (!lastVisit) return false;
+            
+            const last = new Date(lastVisit);
+            const current = new Date(today);
+            
+            // Set to same time to compare just the dates
+            last.setHours(0, 0, 0, 0);
+            current.setHours(0, 0, 0, 0);
+            
+            // Calculate difference in days
+            const diffTime = current - last;
+            const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+            
+            return diffDays === 1;
+        }
+    </script>
+</body>
+</html>

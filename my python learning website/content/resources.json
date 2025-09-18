@@ -1,0 +1,10 @@
+{
+  "resources": [
+    { "name": "Official Python Docs", "url": "https://docs.python.org/3/" },
+    { "name": "W3Schools Python", "url": "https://www.w3schools.com/python/" },
+    { "name": "Real Python Tutorials", "url": "https://realpython.com/" },
+    { "name": "Python Tutor (Step-through)", "url": "https://pythontutor.com/" }
+  ]
+}
+
+

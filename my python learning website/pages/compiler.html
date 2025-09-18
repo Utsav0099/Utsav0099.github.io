@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Python Compiler</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        .fullscreen { height: calc(100vh - 140px); display:grid; grid-template-columns:1fr; gap:12px }
+        .toolbar { display:flex; gap:10px; align-items:center; justify-content:space-between }
+        .io { display:grid; gap:12px; grid-template-columns:1fr }
+        @media(min-width:900px){ .io{ grid-template-columns:1fr 1fr } }
+        .editor { height: 100%; min-height: 320px }
+        .out { height: 100%; min-height: 200px }
+    </style>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.32.3/ace.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.32.3/mode-python.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/skulpt/1.2.0/skulpt.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/skulpt/1.2.0/skulpt-stdlib.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="brand"><div class="logo"></div> Python Learning Hub</div>
+                <div class="navlinks">
+                    <a href="../index.html">Home</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main class="container">
+        <section class="grid" style="grid-template-columns:1fr; margin:10px 0 20px">
+            <div class="pan">
+                <div class="head">
+                    <h2>Online Python Compiler</h2>
+                    <div class="toolbar">
+                        <div class="small muted">Ctrl/Cmd+Enter to Run</div>
+                        <div style="display:flex; gap:8px">
+                            <button class="btn primary" id="run-code">Run ▶</button>
+                            <button class="btn" id="reset-code">Reset</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="body fullscreen">
+                    <div class="io">
+                        <div id="editor" class="editor"># Write Python code here\nprint('Hello from the Compiler!')</div>
+                        <pre class="out" id="output"></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">Compiler • Powered by Skulpt</div>
+    </footer>
+    <script>
+        let editor;
+        function init(){
+            editor = ace.edit('editor');
+            editor.setTheme('ace/theme/one_dark');
+            editor.session.setMode('ace/mode/python');
+            editor.session.setTabSize(4);
+        }
+        function outf(text){ document.getElementById('output').textContent += text; }
+        function builtinRead(x){ if (Sk.builtinFiles===undefined||Sk.builtinFiles["files"][x]===undefined) throw "File not found: '"+x+"'"; return Sk.builtinFiles["files"][x]; }
+        async function run(){
+            const out = document.getElementById('output'); out.textContent = '';
+            Sk.configure({ output: outf, read: builtinRead, __future__: Sk.python3 });
+            try{ await Sk.misceval.asyncToPromise(()=> Sk.importMainWithBody('<stdin>', false, editor.getValue(), true)); }
+            catch(e){ out.textContent += '\n' + e.toString(); }
+        }
+        document.addEventListener('DOMContentLoaded', ()=>{
+            init();
+            document.getElementById('run-code').addEventListener('click', run);
+            document.getElementById('reset-code').addEventListener('click', ()=> editor.setValue("print('Hello from the Compiler!')", -1));
+            document.addEventListener('keydown', (e)=>{ if(e.key==='Enter' && (e.ctrlKey||e.metaKey)){ e.preventDefault(); run(); } });
+        });
+    </script>
+</body>
+</html>
+
+

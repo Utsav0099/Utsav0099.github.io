@@ -1,0 +1,73 @@
+{
+  "modules": [
+    {
+      "id": 1,
+      "title": "Python Basics",
+      "lessons": [
+        {
+          "id": 1,
+          "title": "Introduction & Syntax",
+          "body": "<p>Python is a popular, easy-to-read programming language. Start with printing text and basic variables.</p><ul><li><b>print()</b>: output text</li><li>Variables: <code>name = 'Ada'</code>, <code>age = 21</code></li><li>Input: <code>input('Enter: ')</code> (limited in browser)</li></ul><pre><code>message = 'Hello, World!'\nprint(message)</code></pre>",
+          "hint": "Use print() to display information. Strings use quotes.",
+          "solution": "message = 'Hello, World!'\nprint(message)"
+        },
+        {
+          "id": 2,
+          "title": "Data Types & Operators",
+          "body": "<p>Common types: int, float, str, bool, list, tuple, dict.</p><pre><code>a = 5; b = 2\nprint(a + b, a / b)\nprint(type(a), type(3.14))</code></pre>",
+          "hint": "Try arithmetic with +, -, *, / and see types with type().",
+          "solution": "a = 5\nb = 2\nprint(a + b, a / b)\nprint(type(a), type(3.14))"
+        },
+        {
+          "id": 3,
+          "title": "Control Flow",
+          "body": "<p>Use if/elif/else and loops to control logic.</p><pre><code>for i in range(3):\n    print('i =', i)\n\nx = 7\nif x % 2 == 1:\n    print('odd')\nelse:\n    print('even')</code></pre>",
+          "hint": "Use % 2 to check even/odd. range(n) counts 0..n-1.",
+          "solution": "for i in range(3):\n    print('i =', i)\n\nx = 7\nif x % 2 == 1:\n    print('odd')\nelse:\n    print('even')"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Data Structures",
+      "lessons": [
+        {
+          "id": 1,
+          "title": "Lists & Slices",
+          "body": "<p>Lists are ordered and mutable.</p><pre><code>nums = [1,2,3,4]\nprint(nums[0], nums[-1])\nprint(nums[1:3])</code></pre>",
+          "hint": "Use [start:end] for slices, negative index for from-end.",
+          "solution": "nums = [1,2,3,4]\nprint(nums[0], nums[-1])\nprint(nums[1:3])"
+        },
+        {
+          "id": 2,
+          "title": "Dictionaries",
+          "body": "<p>Key-value storage.</p><pre><code>user = {'name':'Ada','age':21}\nprint(user['name'])</code></pre>",
+          "hint": "Use square brackets with key to access values.",
+          "solution": "user = {'name':'Ada','age':21}\nprint(user['name'])"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Functions & OOP",
+      "lessons": [
+        {
+          "id": 1,
+          "title": "Functions",
+          "body": "<p>Group reusable logic.</p><pre><code>def greet(name):\n    return 'Hello ' + name\n\nprint(greet('Ada'))</code></pre>",
+          "hint": "Define with def name(args): and return a value.",
+          "solution": "def greet(name):\n    return 'Hello ' + name\n\nprint(greet('Ada'))"
+        },
+        {
+          "id": 2,
+          "title": "Classes",
+          "body": "<p>Blueprints for objects with state and behavior.</p><pre><code>class Counter:\n    def __init__(self):\n        self.value = 0\n    def inc(self):\n        self.value += 1\n\nc = Counter(); c.inc(); print(c.value)</code></pre>",
+          "hint": "Methods take self as first parameter.",
+          "solution": "class Counter:\n    def __init__(self):\n        self.value = 0\n    def inc(self):\n        self.value += 1\n\nc = Counter()\nc.inc()\nprint(c.value)"
+        }
+      ]
+    }
+  ]
+}
+
+

@@ -1,0 +1,9 @@
+{
+  "quiz": [
+    { "q": "What does print(3 + 2) output?", "options": ["32", "5", "3+2"], "answer": 1, "explanation": "3 + 2 adds integers, so it outputs 5." },
+    { "q": "Which is a list?", "options": ["{'a':1}", "[1,2,3]", "(1,2)"], "answer": 1, "explanation": "Square brackets denote a list in Python." },
+    { "q": "How to define a function?", "options": ["function x():", "def x():", "fn x():"], "answer": 1, "explanation": "Functions start with the def keyword." }
+  ]
+}
+
+

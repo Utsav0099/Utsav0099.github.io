@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note • Python Learning Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.32.3/ace.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.32.3/mode-python.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/skulpt/1.2.0/skulpt.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/skulpt/1.2.0/skulpt-stdlib.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="brand"><div class="logo"></div> Python Learning Hub</div>
+                <div class="navlinks">
+                    <a href="../index.html#notes">Back to Notes</a>
+                    <a href="../index.html">Home</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main class="container">
+        <section class="grid" style="grid-template-columns:1fr; margin:10px 0 20px">
+            <div class="pan">
+                <div class="head"><h2 id="note-title">Note</h2></div>
+                <div class="body" id="note-content">Loading note...</div>
+            </div>
+        </section>
+        <section class="grid" style="grid-template-columns:1fr; margin:10px 0 30px">
+            <div class="pan">
+                <div class="head"><h2>Try Code from Note</h2></div>
+                <div class="body">
+                    <div id="editor" class="editor">print('Run code from the note here')</div>
+                    <div style="display:flex; gap:10px; margin:10px 0">
+                        <button class="btn primary" id="run-code">Run ▶</button>
+                        <button class="btn" id="reset-code">Reset</button>
+                    </div>
+                    <div class="out" id="output"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">Notes • Keep learning daily</div>
+    </footer>
+    <script>
+        const params = new URLSearchParams(location.search);
+        const file = params.get('file');
+        const title = params.get('title') || 'Note';
+        document.getElementById('note-title').textContent = title;
+        async function loadNote(){
+            try{
+                const res = await fetch(`../notes/${file}`);
+                const text = await res.text();
+                const html = text
+                    .replace(/^# (.*)$/gm,'<h2>$1</h2>')
+                    .replace(/^## (.*)$/gm,'<h3>$1</h3>')
+                    .replace(/\*\*(.*?)\*\*/g,'<b>$1</b>')
+                    .replace(/`([^`]+)`/g,'<code>$1</code>')
+                    .replace(/\n\n/g,'<br/><br/>');
+                document.getElementById('note-content').innerHTML = html;
+            }catch(e){
+                document.getElementById('note-content').textContent = 'Failed to load note.';
+            }
+        }
+        // Editor
+        let editor;
+        function initEditor(){
+            editor = ace.edit('editor');
+            editor.setTheme('ace/theme/one_dark');
+            editor.session.setMode('ace/mode/python');
+            editor.session.setTabSize(4);
+        }
+        function outf(text){ document.getElementById('output').textContent += text; }
+        function builtinRead(x){
+            if (Sk.builtinFiles === undefined || Sk.builtinFiles["files"][x] === undefined)
+                throw "File not found: '" + x + "'";
+            return Sk.builtinFiles["files"][x];
+        }
+        async function runCode(){
+            const code = editor.getValue();
+            const out = document.getElementById('output');
+            out.textContent = '';
+            Sk.configure({ output: outf, read: builtinRead, __future__: Sk.python3 });
+            try{
+                const res = Sk.misceval.asyncToPromise(()=> Sk.importMainWithBody('<stdin>', false, code, true));
+                await res;
+            }catch(e){ out.textContent += '\n' + e.toString(); }
+        }
+        document.addEventListener('DOMContentLoaded', ()=>{
+            loadNote();
+            initEditor();
+            document.getElementById('run-code').addEventListener('click', runCode);
+            document.getElementById('reset-code').addEventListener('click', ()=> editor.setValue("print('Run code from the note here')", -1));
+        });
+    </script>
+</body>
+</html>
+
+

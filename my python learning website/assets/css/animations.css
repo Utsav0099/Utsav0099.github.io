@@ -1,0 +1,335 @@
+/* Animations for Utsav's Python Learning Hub */
+
+/* Fade in animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Slide up animation */
+@keyframes slideUp {
+    from { 
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Pulse animation */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Progress bar fill animation */
+@keyframes progressFill {
+    from { width: 0; }
+    to { width: var(--progress-width, 0%); }
+}
+
+/* Button hover effect */
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(124,156,255,.25);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Apply animations to elements */
+.hero {
+    animation: fadeIn 0.8s ease-out;
+}
+
+section {
+    animation: slideUp 0.6s ease-out;
+}
+
+.pan {
+    animation: fadeIn 0.5s ease-out;
+}
+
+.progressbar > span {
+    animation: progressFill 1s ease-out forwards;
+}
+
+/* Staggered animations for lists */
+.list .card {
+    opacity: 0;
+    animation: slideUp 0.4s ease-out forwards;
+}
+
+.list .card:nth-child(1) { animation-delay: 0.1s; }
+.list .card:nth-child(2) { animation-delay: 0.2s; }
+.list .card:nth-child(3) { animation-delay: 0.3s; }
+.list .card:nth-child(4) { animation-delay: 0.4s; }
+.list .card:nth-child(5) { animation-delay: 0.5s; }
+.list .card:nth-child(6) { animation-delay: 0.6s; }
+.list .card:nth-child(7) { animation-delay: 0.7s; }
+.list .card:nth-child(8) { animation-delay: 0.8s; }
+.list .card:nth-child(9) { animation-delay: 0.9s; }
+.list .card:nth-child(10) { animation-delay: 1.0s; }
+
+/* Quiz result animations */
+.quiz-score {
+    animation: pulse 0.5s ease-out;
+}
+
+.quiz-result-item {
+    opacity: 0;
+    animation: slideUp 0.4s ease-out forwards;
+    animation-delay: calc(var(--item-index, 0) * 0.1s + 0.2s);
+}
+
+/* Code output animation */
+.out {
+    position: relative;
+    overflow: hidden;
+}
+
+.out::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(124,156,255,0.2), transparent);
+    transform: translateX(-100%);
+}
+
+.out.running::after {
+    animation: codeScan 1.5s ease-in-out infinite;
+}
+
+@keyframes codeScan {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* Lesson completion animation */
+@keyframes celebrate {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.lesson-complete {
+    animation: celebrate 0.5s ease-out;
+}
+
+/* Dark mode toggle animation */
+.dark-mode-toggle {
+    transition: transform 0.3s ease;
+}
+
+.dark-mode-toggle:hover {
+    transform: rotate(45deg);
+}
+
+/* Mobile menu animation */
+.navlinks {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.navlinks.open {
+    animation: slideDown 0.3s ease-out forwards;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Page transitions */
+.page-transition {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg);
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.page-transition.active {
+    opacity: 1;
+}
+
+/* Streak counter animation */
+.kpi-streak-update {
+    animation: pulse 0.5s ease-out;
+}
+
+/* Section animations */
+section {
+    animation: slideUp 0.5s ease forwards;
+}
+
+section.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+/* Card hover animation */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Quiz result animation */
+#quiz-result {
+    animation: fadeIn 0.5s ease;
+}
+
+/* Code output animation */
+#output {
+    transition: height 0.3s ease;
+}
+
+/* Progress bar animation */
+.progressbar > span {
+    animation: progressFill 1s ease-out;
+}
+
+/* Logo animation */
+.brand .logo {
+    transition: transform 0.3s ease;
+}
+
+.brand:hover .logo {
+    transform: rotate(10deg);
+}
+
+/* Navigation link hover animation */
+.navlinks a {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navlinks a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--accent);
+    transition: width 0.3s ease;
+}
+
+.navlinks a:hover::after {
+    width: 100%;
+}
+
+/* Button click animation */
+.btn:active {
+    transform: scale(0.95);
+}
+
+/* Mark complete button animation */
+#mark-complete:not(:disabled) {
+    animation: pulse 2s infinite;
+}
+
+/* Module card completion animation */
+.card .progressbar span {
+    transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+/* Mobile menu animation */
+.navlinks.open {
+    animation: fadeIn 0.3s ease;
+}
+
+/* Quiz option hover animation */
+.radio:hover {
+    background-color: rgba(124, 156, 255, 0.1);
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Module list item animation */
+#module-list .card {
+    animation: slideUp 0.5s ease-in-out;
+    animation-fill-mode: both;
+}
+
+#module-list .card:nth-child(1) { animation-delay: 0.1s; }
+#module-list .card:nth-child(2) { animation-delay: 0.2s; }
+#module-list .card:nth-child(3) { animation-delay: 0.3s; }
+#module-list .card:nth-child(4) { animation-delay: 0.4s; }
+#module-list .card:nth-child(5) { animation-delay: 0.5s; }
+#module-list .card:nth-child(6) { animation-delay: 0.6s; }
+#module-list .card:nth-child(7) { animation-delay: 0.7s; }
+#module-list .card:nth-child(8) { animation-delay: 0.8s; }
+
+/* Progress bar animation */
+.progressbar > span {
+    animation: progressFill 1s ease-out;
+}
+
+/* Quiz result reveal animation */
+.quiz-result {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Code output slide animation */
+.out {
+    animation: slideUp 0.3s ease-in-out;
+}
+
+/* Modal animation */
+.modal-content {
+    animation: slideUp 0.4s ease-in-out;
+}
+
+/* Search results animation */
+.search-results {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Badge pulse animation */
+.badge.new {
+    animation: pulse 2s infinite;
+}
+
+/* Theme transition */
+body, .pan, .btn, .kpi, .card, .out, .editor, .modal-content {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Logo spin on hover */
+.brand .logo:hover {
+    animation: spin 1s ease-in-out;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Completed lesson checkmark animation */
+.completed-checkmark {
+    animation: scaleIn 0.3s ease-in-out;
+}
+
+@keyframes scaleIn {
+    from { transform: scale(0); }
+    to { transform: scale(1); }
+}

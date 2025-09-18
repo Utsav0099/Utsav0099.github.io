@@ -1,0 +1,24 @@
+{
+  "notes": [
+    {
+      "id": "basics",
+      "title": "Python Basics",
+      "content": "notes/basics.md",
+      "lastModified": "2023-09-01T12:00:00Z"
+    },
+    {
+      "id": "cwh_intro",
+      "title": "Introduction to Python",
+      "content": "notes/cwh_intro.md",
+      "lastModified": "2023-09-02T14:30:00Z"
+    },
+    {
+      "id": "cwh_variables",
+      "title": "Python Variables",
+      "content": "notes/cwh_variables.md",
+      "lastModified": "2023-09-03T10:15:00Z"
+    }
+  ]
+}
+
+

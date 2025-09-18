@@ -1,0 +1,177 @@
+/* Responsive styles for Utsav's Python Learning Hub */
+
+/* Base responsive layout */
+@media (max-width: 1200px) {
+    .container {
+        width: 95%;
+    }
+}
+
+/* Tablet layout */
+@media (max-width: 900px) {
+    .row {
+        grid-template-columns: 1fr;
+    }
+    
+    .lesson-navigation {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .lesson-content {
+        padding: 15px;
+    }
+}
+
+/* Mobile layout */
+@media (max-width: 720px) {
+    .navlinks {
+        display: none;
+        position: absolute;
+        right: 4%;
+        top: 56px;
+        background: var(--panel);
+        padding: 12px;
+        border-radius: 12px;
+        border: 1px solid rgba(124,156,255,.18);
+        flex-direction: column;
+        gap: 12px;
+        z-index: 100;
+    }
+    
+    .navlinks.open {
+        display: flex;
+    }
+    
+    .mobile-toggle {
+        display: block;
+    }
+    
+    .hero h1 {
+        font-size: 28px;
+    }
+    
+    .hero p {
+        font-size: 16px;
+    }
+    
+    .kpis {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .editor {
+        height: 220px;
+    }
+    
+    .lesson-page .editor-container {
+        height: auto;
+    }
+    
+    .lesson-navigation .lesson-nav-buttons {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .lesson-navigation .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Small mobile layout */
+@media (max-width: 480px) {
+    .hero {
+        padding: 40px 0 20px;
+    }
+    
+    .btn {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+    
+    .editor {
+        height: 180px;
+    }
+    
+    .pan .head {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .pan .head .progressbar {
+        width: 100%;
+    }
+    
+    .lesson-section {
+        padding: 10px;
+    }
+    
+    .code-example {
+        padding: 10px;
+        overflow-x: auto;
+    }
+}
+
+/* Print styles */
+@media print {
+    header, footer, .editor-container, .lesson-navigation, .lesson-quiz {
+        display: none;
+    }
+    
+    body, html {
+        background: white;
+        color: black;
+    }
+    
+    .lesson-content {
+        padding: 0;
+        margin: 0;
+    }
+    
+    .container {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+/* Dark/light mode transitions */
+.dark-mode-transition {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Landscape tablet adjustments */
+@media (min-width: 721px) and (max-width: 900px) and (orientation: landscape) {
+    .row {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .editor {
+        height: 250px;
+    }
+}
+
+/* High-resolution displays */
+@media (min-width: 1800px) {
+    .container {
+        width: 1400px;
+        max-width: 80%;
+    }
+    
+    html {
+        font-size: 18px;
+    }
+}
+
+/* Accessibility - reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

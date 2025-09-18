@@ -1,0 +1,224 @@
+{
+  "quizzes": [
+    {
+      "id": "python_intro",
+      "title": "Python Introduction",
+      "description": "Test your knowledge of Python basics",
+      "questions": [
+        {
+          "id": "intro_q1",
+          "question": "What is Python primarily used for?",
+          "type": "multiple-choice",
+          "options": [
+            "Web development only",
+            "Data analysis only",
+            "General purpose programming with strengths in many areas",
+            "Mobile app development only"
+          ],
+          "correctAnswer": 2,
+          "explanation": "Python is a versatile general-purpose language used in web development, data science, AI, automation, and more."
+        },
+        {
+          "id": "intro_q2",
+          "question": "Who created Python?",
+          "type": "multiple-choice",
+          "options": [
+            "Guido van Rossum",
+            "James Gosling",
+            "Bjarne Stroustrup",
+            "Tim Berners-Lee"
+          ],
+          "correctAnswer": 0,
+          "explanation": "Python was created by Guido van Rossum and first released in 1991."
+        },
+        {
+          "id": "intro_q3",
+          "question": "What symbol is used for comments in Python?",
+          "type": "multiple-choice",
+          "options": [
+            "//",
+            "#",
+            "/* */",
+            "--"
+          ],
+          "correctAnswer": 1,
+          "explanation": "Python uses the # symbol for single-line comments."
+        },
+        {
+          "id": "intro_q4",
+          "question": "Fix this code to print 'Hello World':",
+          "type": "code",
+          "codeSnippet": "print(Hello World)",
+          "correctAnswer": "print(\"Hello World\")",
+          "explanation": "String literals in Python must be enclosed in quotes."
+        }
+      ]
+    },
+    {
+      "id": "python_variables",
+      "title": "Python Variables",
+      "description": "Test your understanding of Python variables",
+      "questions": [
+        {
+          "id": "var_q1",
+          "question": "Which of the following is a valid variable name in Python?",
+          "type": "multiple-choice",
+          "options": [
+            "1variable",
+            "my-var",
+            "my_var",
+            "class"
+          ],
+          "correctAnswer": 2,
+          "explanation": "Variable names can contain letters, numbers, and underscores, but cannot start with a number or be a reserved keyword."
+        },
+        {
+          "id": "var_q2",
+          "question": "What will be the output of this code?\nx = 5\nx += 3\nprint(x)",
+          "type": "multiple-choice",
+          "options": [
+            "5",
+            "3",
+            "8",
+            "Error"
+          ],
+          "correctAnswer": 2,
+          "explanation": "x += 3 is equivalent to x = x + 3, so x becomes 8."
+        },
+        {
+          "id": "var_q3",
+          "question": "Fix this code to correctly assign multiple variables:",
+          "type": "code",
+          "codeSnippet": "a, b c = 1, 2, 3",
+          "correctAnswer": "a, b, c = 1, 2, 3",
+          "explanation": "When assigning multiple variables, separate each variable name with commas."
+        }
+      ]
+    },
+    {
+      "id": "python_datatypes",
+      "title": "Python Data Types",
+      "description": "Test your knowledge of Python data types",
+      "questions": [
+        {
+          "id": "dt_q1",
+          "question": "Which of these is NOT a built-in data type in Python?",
+          "type": "multiple-choice",
+          "options": [
+            "list",
+            "dictionary",
+            "array",
+            "tuple"
+          ],
+          "correctAnswer": 2,
+          "explanation": "Arrays are not built-in types in Python. The array-like functionality is provided by lists. NumPy provides array support as an external library."
+        },
+        {
+          "id": "dt_q2",
+          "question": "What is the data type of this value: {1, 2, 3}?",
+          "type": "multiple-choice",
+          "options": [
+            "List",
+            "Dictionary",
+            "Set",
+            "Tuple"
+          ],
+          "correctAnswer": 2,
+          "explanation": "Curly braces {} with comma-separated values (without key:value pairs) define a set in Python."
+        },
+        {
+          "id": "dt_q3",
+          "question": "Fix this code to create a dictionary with name and age:",
+          "type": "code",
+          "codeSnippet": "person = [\"name\": \"John\", \"age\": 30]",
+          "correctAnswer": "person = {\"name\": \"John\", \"age\": 30}",
+          "explanation": "Dictionaries use curly braces {} not square brackets []."
+        }
+      ]
+    },
+    {
+      "id": "python_loops",
+      "title": "Python Loops",
+      "description": "Test your understanding of Python loops",
+      "questions": [
+        {
+          "id": "loop_q1",
+          "question": "Which loop is guaranteed to execute at least once?",
+          "type": "multiple-choice",
+          "options": [
+            "for loop",
+            "while loop",
+            "do-while loop",
+            "None of the above"
+          ],
+          "correctAnswer": 3,
+          "explanation": "Python doesn't have a do-while loop. Both for and while loops check their condition before the first execution."
+        },
+        {
+          "id": "loop_q2",
+          "question": "What does the 'continue' statement do in a loop?",
+          "type": "multiple-choice",
+          "options": [
+            "Exits the loop completely",
+            "Skips the current iteration and continues with the next one",
+            "Pauses the loop execution",
+            "Restarts the loop from the beginning"
+          ],
+          "correctAnswer": 1,
+          "explanation": "The continue statement skips the rest of the current iteration and moves to the next iteration."
+        },
+        {
+          "id": "loop_q3",
+          "question": "Fix this code to print numbers from 1 to 5:",
+          "type": "code",
+          "codeSnippet": "for i in range(5):\n    print(i)",
+          "correctAnswer": "for i in range(1, 6):\n    print(i)",
+          "explanation": "range(5) generates numbers from 0 to 4. To get 1 to 5, use range(1, 6)."
+        }
+      ]
+    },
+    {
+      "id": "python_functions",
+      "title": "Python Functions",
+      "description": "Test your knowledge of Python functions",
+      "questions": [
+        {
+          "id": "func_q1",
+          "question": "What is the correct way to define a function in Python?",
+          "type": "multiple-choice",
+          "options": [
+            "function myFunc():",
+            "def myFunc():",
+            "define myFunc():",
+            "func myFunc():"
+          ],
+          "correctAnswer": 1,
+          "explanation": "Python functions are defined using the 'def' keyword followed by the function name and parentheses."
+        },
+        {
+          "id": "func_q2",
+          "question": "What will this function return? def add(a, b=2): return a + b",
+          "type": "multiple-choice",
+          "options": [
+            "Always 2",
+            "The sum of a and b, with b defaulting to 2 if not provided",
+            "Error because b needs a value",
+            "None"
+          ],
+          "correctAnswer": 1,
+          "explanation": "The function adds parameters a and b, with b having a default value of 2 if not specified."
+        },
+        {
+          "id": "func_q3",
+          "question": "Fix this function to calculate the area of a rectangle:",
+          "type": "code",
+          "codeSnippet": "def calculate_area(length, width)\n    return length * width",
+          "correctAnswer": "def calculate_area(length, width):\n    return length * width",
+          "explanation": "Function definitions need a colon (:) after the parameter list."
+        }
+      ]
+    }
+  ]
+}
+
+

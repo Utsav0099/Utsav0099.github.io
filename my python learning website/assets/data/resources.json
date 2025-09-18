@@ -1,0 +1,44 @@
+{
+  "resources": [
+    {
+      "id": "official_docs",
+      "title": "Python Official Documentation",
+      "description": "The official Python documentation with complete language reference",
+      "url": "https://docs.python.org/3/",
+      "type": "website",
+      "category": "documentation"
+    },
+    {
+      "id": "numpy_docs",
+      "title": "NumPy Documentation",
+      "description": "Official documentation for the NumPy library",
+      "url": "https://numpy.org/doc/stable/",
+      "type": "website",
+      "category": "documentation"
+    },
+    {
+      "id": "pandas_docs",
+      "title": "Pandas Documentation",
+      "description": "Official documentation for the Pandas library",
+      "url": "https://pandas.pydata.org/docs/",
+      "type": "website",
+      "category": "documentation"
+    },
+    {
+      "id": "matplotlib_docs",
+      "title": "Matplotlib Documentation",
+      "description": "Official documentation for the Matplotlib library",
+      "url": "https://matplotlib.org/stable/contents.html",
+      "type": "website",
+      "category": "documentation"
+    },
+    {
+      "id": "python_style_guide",
+      "title": "PEP 8 Style Guide",
+      "description": "Style guide for Python code",
+      "url": "https://peps.python.org/pep-0008/",
+      "type": "website",
+      "category": "best_practices"
+    }
+  ]
+}

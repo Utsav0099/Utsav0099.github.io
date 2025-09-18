@@ -1,0 +1,195 @@
+{
+  "modules": [
+    {
+      "id": "python_basics",
+      "title": "Python Basics",
+      "description": "Learn the fundamentals of Python programming",
+      "icon": "code",
+      "progress": 0,
+      "lessons": [
+        {
+          "id": "python_intro",
+          "title": "Introduction to Python",
+          "description": "Learn what Python is and why it's popular",
+          "content": "lessons/python_intro.html",
+          "quizId": "python_intro",
+          "codeExample": "print('Hello, Python!')\nprint('Welcome to Utsav\\'s Python Learning Hub')"
+        },
+        {
+          "id": "python_syntax",
+          "title": "Python Syntax",
+          "description": "Learn the basic syntax rules of Python",
+          "content": "lessons/python_syntax.html",
+          "quizId": "python_syntax",
+          "codeExample": "# This is a comment\nprint('Python has simple syntax')\nif 5 > 2:\n    print('Five is greater than two')"
+        },
+        {
+          "id": "python_variables",
+          "title": "Python Variables",
+          "description": "Learn how to create and use variables",
+          "content": "lessons/python_variables.html",
+          "quizId": "python_variables",
+          "codeExample": "x = 5\ny = 'Hello'\nprint(x)\nprint(y)"
+        },
+        {
+          "id": "python_datatypes",
+          "title": "Python Data Types",
+          "description": "Learn about different data types in Python",
+          "content": "lessons/python_datatypes.html",
+          "quizId": "python_datatypes",
+          "codeExample": "x = 5       # int\ny = 3.14    # float\nz = \"Hello\"  # str\na = True    # bool\n\nprint(type(x))\nprint(type(y))\nprint(type(z))\nprint(type(a))"
+        }
+      ]
+    },
+    {
+      "id": "python_control_flow",
+      "title": "Control Flow",
+      "description": "Learn how to control the flow of your Python programs",
+      "icon": "shuffle",
+      "progress": 0,
+      "lessons": [
+        {
+          "id": "python_ifelse",
+          "title": "If...Else Statements",
+          "description": "Learn how to make decisions in your code",
+          "content": "lessons/python_ifelse.html",
+          "quizId": "python_ifelse",
+          "codeExample": "x = 10\n\nif x > 5:\n    print('x is greater than 5')\nelif x == 5:\n    print('x is equal to 5')\nelse:\n    print('x is less than 5')"
+        },
+        {
+          "id": "python_match",
+          "title": "Match Statements",
+          "description": "Learn about Python's match-case statements (Python 3.10+)",
+          "content": "lessons/python_match.html",
+          "quizId": "python_match",
+          "codeExample": "# Python 3.10+ feature\nstatus = 404\n\nmatch status:\n    case 200:\n        print('OK')\n    case 404:\n        print('Not Found')\n    case _:\n        print('Unknown')"
+        },
+        {
+          "id": "python_while",
+          "title": "While Loops",
+          "description": "Learn how to create while loops",
+          "content": "lessons/python_while.html",
+          "quizId": "python_loops",
+          "codeExample": "i = 1\nwhile i < 6:\n    print(i)\n    i += 1"
+        },
+        {
+          "id": "python_for",
+          "title": "For Loops",
+          "description": "Learn how to create for loops",
+          "content": "lessons/python_for.html",
+          "quizId": "python_loops",
+          "codeExample": "fruits = ['apple', 'banana', 'cherry']\nfor fruit in fruits:\n    print(fruit)\n\nfor i in range(5):\n    print(i)"
+        }
+      ]
+    },
+    {
+      "id": "python_functions",
+      "title": "Functions & Modules",
+      "description": "Learn how to create and use functions and modules",
+      "icon": "function",
+      "progress": 0,
+      "lessons": [
+        {
+          "id": "python_functions",
+          "title": "Python Functions",
+          "description": "Learn how to create and call functions",
+          "content": "lessons/python_functions.html",
+          "quizId": "python_functions",
+          "codeExample": "def greet(name):\n    return f'Hello, {name}!'\n\nprint(greet('Utsav'))\n\n# Function with default parameter\ndef add(a, b=5):\n    return a + b\n\nprint(add(3))      # 8\nprint(add(3, 7))   # 10"
+        },
+        {
+          "id": "python_lambda",
+          "title": "Lambda Functions",
+          "description": "Learn about anonymous functions in Python",
+          "content": "lessons/python_lambda.html",
+          "quizId": "python_lambda",
+          "codeExample": "# Regular function\ndef double(x):\n    return x * 2\n\n# Equivalent lambda function\ndouble_lambda = lambda x: x * 2\n\nprint(double(5))        # 10\nprint(double_lambda(5)) # 10"
+        },
+        {
+          "id": "python_modules",
+          "title": "Python Modules",
+          "description": "Learn how to use and create modules",
+          "content": "lessons/python_modules.html",
+          "quizId": "python_modules",
+          "codeExample": "# Using built-in modules\nimport math\nfrom datetime import datetime\n\nprint(math.sqrt(16))  # 4.0\nprint(datetime.now()) # Current date and time"
+        }
+      ]
+    },
+    {
+      "id": "python_data_structures",
+      "title": "Data Structures",
+      "description": "Learn about Python's built-in data structures",
+      "icon": "database",
+      "progress": 0,
+      "lessons": [
+        {
+          "id": "python_lists",
+          "title": "Python Lists",
+          "description": "Learn how to create and manipulate lists",
+          "content": "lessons/python_lists.html",
+          "quizId": "python_lists",
+          "codeExample": "fruits = ['apple', 'banana', 'cherry']\nprint(fruits[0])  # apple\n\nfruits.append('orange')\nprint(fruits)  # ['apple', 'banana', 'cherry', 'orange']\n\nfruits.remove('banana')\nprint(fruits)  # ['apple', 'cherry', 'orange']"
+        },
+        {
+          "id": "python_tuples",
+          "title": "Python Tuples",
+          "description": "Learn about immutable sequences",
+          "content": "lessons/python_tuples.html",
+          "quizId": "python_tuples",
+          "codeExample": "coordinates = (10, 20)\nprint(coordinates[0])  # 10\n\n# Tuples are immutable\n# This will cause an error:\n# coordinates[0] = 15"
+        },
+        {
+          "id": "python_dictionaries",
+          "title": "Python Dictionaries",
+          "description": "Learn about key-value pairs",
+          "content": "lessons/python_dictionaries.html",
+          "quizId": "python_dictionaries",
+          "codeExample": "person = {\n    'name': 'Utsav',\n    'age': 25,\n    'city': 'Mumbai'\n}\n\nprint(person['name'])  # Utsav\n\nperson['email'] = 'utsav@example.com'\nprint(person)  # Updated dictionary with email"
+        },
+        {
+          "id": "python_sets",
+          "title": "Python Sets",
+          "description": "Learn about unordered collections of unique items",
+          "content": "lessons/python_sets.html",
+          "quizId": "python_sets",
+          "codeExample": "fruits = {'apple', 'banana', 'cherry'}\n\n# No duplicates allowed\nfruits.add('apple')  # No effect\nfruits.add('orange')\nprint(fruits)  # {'cherry', 'apple', 'banana', 'orange'} (order may vary)"
+        }
+      ]
+    },
+    {
+      "id": "file_handling",
+      "title": "File Handling",
+      "description": "Learn how to work with files in Python",
+      "icon": "file",
+      "progress": 0,
+      "lessons": [
+        {
+          "id": "python_file_handling",
+          "title": "File Handling Basics",
+          "description": "Learn how to work with files",
+          "content": "lessons/python_file_handling.html",
+          "quizId": "python_file_handling",
+          "codeExample": "# Reading a file\nf = open('example.txt', 'r')\ncontent = f.read()\nprint(content)\nf.close()\n\n# Using with statement (recommended)\nwith open('example.txt', 'r') as f:\n    content = f.read()\n    print(content)"
+        },
+        {
+          "id": "python_write_files",
+          "title": "Writing Files",
+          "description": "Learn how to create and write to files",
+          "content": "lessons/python_write_files.html",
+          "quizId": "python_write_files",
+          "codeExample": "# Writing to a file\nwith open('example.txt', 'w') as f:\n    f.write('Hello, World!')\n\n# Appending to a file\nwith open('example.txt', 'a') as f:\n    f.write('\\nThis is a new line.')"
+        },
+        {
+          "id": "python_delete_files",
+          "title": "Deleting Files",
+          "description": "Learn how to delete files and directories",
+          "content": "lessons/python_delete_files.html",
+          "quizId": "python_delete_files",
+          "codeExample": "import os\n\n# Check if file exists\nif os.path.exists('example.txt'):\n    # Delete file\n    os.remove('example.txt')\n    print('File deleted')\nelse:\n    print('File does not exist')"
+        }
+      ]
+    }
+  ]
+}
+
+
