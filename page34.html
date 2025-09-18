@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Know your Bharlarukha family! - Anirudra & Risisara Aryal Details</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Jost:wght@250;400;500;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #e8cf89 0%, #f0d799 50%, #e8cf89 100%);
+            background-attachment: fixed;
+            font-size: 20px;
+            font-family: 'Jost', sans-serif;
+            min-height: 100vh;
+            padding: 20px 0;
+        }
+
+        h1 {
+            background: linear-gradient(135deg, #2f4596 0%, #3a5aa8 100%);
+            color: white;
+            display: inline-block;
+            padding: 15px 30px;
+            border: 3px solid #1e2d5c;
+            border-radius: 25px;
+            font-weight: 600;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            box-shadow: 0 8px 25px rgba(47, 69, 150, 0.3);
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+
+        h1:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 35px rgba(47, 69, 150, 0.4);
+        }
+
+        img {
+            border-radius: 15px;
+            border: 3px solid #d4af37;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            vertical-align: middle; /* Aligns images better with text if inline */
+        }
+
+        img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            border-color: #b8941f;
+        }
+
+        /* Style for small icons like Facebook to not have heavy borders */
+        .contact-info img, .inline-icon {
+            border: none;
+            box-shadow: none;
+            border-radius: 0; /* Or a small radius if preferred */
+            width: 20px; /* Explicitly set from your HTML */
+            height: 20px; /* Explicitly set from your HTML */
+            vertical-align: middle; /* Align with text */
+            margin-left: 5px; /* Spacing from phone number */
+        }
+        .contact-info img:hover, .inline-icon:hover {
+            transform: scale(1.1); /* Simple hover for icons */
+            border: none;
+        }
+
+        table {
+            text-align: center;
+            border: 0px solid black; /* Overridden by specific table classes typically */
+            border-collapse: separate;
+            border-spacing: 5px;
+            font-size: 15px;
+            border-radius: 20px;
+            margin: 20px auto;
+        }
+
+        .info-table {
+            text-align: left;
+            border-spacing: 10px; /* A bit more spacing for info tables */
+            margin: 30px auto; /* Adjusted margin as h2 is removed */
+        }
+
+        .info-table td {
+            text-align: center; /* Center content in info table cells */
+            vertical-align: top;
+            padding: 8px;
+        }
+
+        .parents-table {
+            margin: 20px auto;
+            border-spacing: 5px;
+        }
+
+        .parents-table td {
+            padding: 5px;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        td b {
+            font-weight: 600;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            color: #2c3e50;
+            display: block; /* Makes <b> take full width for better centering */
+            margin-top: 5px;
+            margin-bottom: 5px; /* Added for spacing */
+        }
+
+        .heart-container img { /* Specific for heart, no border/shadow */
+            animation: heartbeat 2s ease-in-out infinite;
+            border: none;
+            box-shadow: none;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .family-member {
+            transition: all 0.3s ease;
+            animation: fadeIn 0.6s ease-out;
+        }
+          /* Stagger animations for up to 4 columns */
+        .family-member:nth-child(1) { animation-delay: 0.1s; }
+        .family-member:nth-child(2) { animation-delay: 0.2s; }
+        .family-member:nth-child(3) { animation-delay: 0.3s; }
+        .family-member:nth-child(4) { animation-delay: 0.4s; }
+
+
+        .contact-info {
+            font-size: 14px;
+            margin-top: 8px;
+            color: #34495e;
+            display: flex; /* Use flexbox for inline alignment */
+            justify-content: center; /* Center items horizontally */
+            align-items: center; /* Center items vertically */
+            margin-bottom: 5px; /* Spacing below contact */
+        }
+
+        .navigation {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            right: 10px;
+            display: flex;
+            justify-content: space-between;
+            z-index: 1000;
+        }
+
+        .nav-button {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            padding: 10px;
+            transition: all 0.3s ease;
+            border: 2px solid #d4af37;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            text-decoration: none;
+            display: inline-block; /* Ensure proper rendering */
+        }
+
+        .nav-button:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+
+        .nav-button img {
+            border: none;
+            box-shadow: none;
+            width: 40px; /* Standard nav icon size */
+            height: 40px; /* Standard nav icon size */
+        }
+
+        .nav-button img:hover {
+            transform: none; /* Prevent double scaling if img itself has hover */
+        }
+
+        @media (max-width: 768px) {
+            body {
+                font-size: 16px;
+                padding: 10px;
+            }
+
+            h1 {
+                padding: 10px 20px;
+                font-size: 1.5em;
+            }
+
+            img[width="200"], img[width="250"] { /* Adjusted to target both original sizes */
+                width: 150px !important; /* Smaller for mobile */
+                height: 150px !important;
+            }
+
+            .navigation {
+                left: 10px;
+                right: 10px;
+                bottom: 10px;
+            }
+
+            table, .info-table, .parents-table {
+                border-spacing: 5px;
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>Know your Bharlarukha family!</h1>
+
+        <div class="parents-table">
+            <table>
+                <tr>
+                    <td class="family-member"><img src="01/anirudra.jpg" width="200" height="200" alt="Anirudra Aryal"></td>
+                    <td class="heart-container"><img src="01/heart.gif" width="50" height="50" alt="Heart"></td>
+                    <td class="family-member"><img src="05/risisara.jpg" width="200" height="200" alt="Risisara Aryal"></td>
+                </tr>
+                <tr>
+                    <td class="family-member"><b>Anirudra Aryal (अनिरुद्र अर्याल)</b></td>
+                    <td></td>
+                    <td class="family-member"><b>Risisara Aryal (रिसिसरा अर्याल)</b></td>
+                </tr>
+                <tr>
+                    <td class="family-member">
+                        <div class="contact-info">
+                            &#x260E; 9847340195<a href="#" target="_blank" rel="noopener noreferrer"><img src="01/facebook.png" width="20" height="20" alt="Facebook" class="inline-icon"></a>
+                        </div>
+                    </td>
+                    <td></td>
+                    <td class="family-member">
+                        <div class="contact-info">
+                            &#x260E; 9847598108<a href="#" target="_blank" rel="noopener noreferrer"><img src="01/facebook.png" width="20" height="20" alt="Facebook" class="inline-icon"></a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="family-member">
+                        <div>DOB : 2002-03-22</div>
+                        <div>Thu 05-Jul-1945</div>
+                    </td>
+                    <td></td>
+                    <td class="family-member">
+                        <div>DOB : 2004-05-14</div>
+                        <div>Sat 30-Aug-1947</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <table class="info-table">
+            <tr>
+                <td class="family-member">
+                    <a href="page35.html"><img src="05/mithu.jpg" width="200" height="200" alt="Mithu Gautam"></a>
+                    <b>Mithu Gautam</b>
+                    <div>DOB : 2029-05-28</div>
+                    <div>Tue 12-Sep-1972</div>
+                    <div>Children: 2</div>
+                    <div><b>Husband: Laxman Gautam</b></div>
+                    <div class="contact-info">
+                        &#x260E; 9844779585<a href="https://www.facebook.com/mithu.aryal.3" target="_blank" rel="noopener noreferrer"><img src="01/facebook.png" width="20" height="20" alt="Facebook" class="inline-icon"></a>
+                    </div>
+                </td>
+                <td class="family-member">
+                    <a href="page37.html"><img src="05/shanta.jpg" width="200" height="200" alt="Shanta Khanal"></a>
+                    <b>Shanta Khanal</b>
+                    <div>DOB : 2035-06-18</div>
+                    <div>Wed 04-Oct-1978</div>
+                    <div>Children: 3</div>
+                    <div><b>Husband: Parasmani Khanal</b></div>
+                    <div class="contact-info">
+                        &#x260E; 9867423810<a href="https://www.facebook.com/shanta.khanal.56829" target="_blank" rel="noopener noreferrer"><img src="01/facebook.png" width="20" height="20" alt="Facebook" class="inline-icon"></a>
+                    </div>
+                </td>
+                <td class="family-member">
+                    <a href="page38.html"><img src="05/bodhraj.jpg" width="200" height="200" alt="Bodhraj Aryal"></a>
+                    <b>Bodhraj Aryal</b>
+                    <div>DOB : 2036-10-14</div>
+                    <div>Mon 28-Jan-1980</div>
+                    <div>Children: 2</div>
+                    <div><b>Wife: Sabita Khanal</b></div>
+                    <div class="contact-info">
+                        &#x260E; 9841618353<a href="https://www.facebook.com/bodhraj.aryal" target="_blank" rel="noopener noreferrer"><img src="01/facebook.png" width="20" height="20" alt="Facebook" class="inline-icon"></a>
+                    </div>
+                </td>
+            </tr>
+        </table>
+  <div class="navigation">
+    <a href="index.html" class="nav-button"><img src="01/home.jpg" width="40px" height="40px" alt="Home"></a>
+    <button onclick="history.back()" class="nav-button"><img src="01/back.jpg" width="40px" height="40px" alt="Back"></button>
+</div>
+</center>
+</body>
+</html>

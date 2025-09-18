@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+	<title></title>
+</head>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Jost:wght@250;400;500;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #e8cf89 0%, #f0d799 50%, #e8cf89 100%);
+            background-attachment: fixed;
+            font-size: 20px;
+            font-family: 'Jost', sans-serif;
+            min-height: 100vh;
+            padding: 20px 0;
+        }
+
+        h1 {
+            background: linear-gradient(135deg, #2f4596 0%, #3a5aa8 100%);
+            color: white;
+            display: inline-block;
+            padding: 15px 30px;
+            border: 3px solid #1e2d5c;
+            border-radius: 25px;
+            font-weight: 600;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            box-shadow: 0 8px 25px rgba(47, 69, 150, 0.3);
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+
+        h1:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 35px rgba(47, 69, 150, 0.4);
+        }
+
+        img {
+            border-radius: 15px;
+            border: 3px solid #d4af37;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            vertical-align: middle; /* Aligns images better with text if inline */
+        }
+
+        img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            border-color: #b8941f;
+        }
+
+        /* Style for small icons like Facebook to not have heavy borders */
+        .contact-info img, .inline-icon {
+            border: none;
+            box-shadow: none;
+            border-radius: 0; /* Or a small radius if preferred */
+            width: 20px; /* Explicitly set from your HTML */
+            height: 20px; /* Explicitly set from your HTML */
+            vertical-align: middle; /* Align with text */
+            margin-left: 5px; /* Spacing from phone number */
+        }
+        .contact-info img:hover, .inline-icon:hover {
+            transform: scale(1.1); /* Simple hover for icons */
+            border: none;
+        }
+
+        table {
+            text-align: center;
+            border: 0px solid black; /* Overridden by specific table classes typically */
+            border-collapse: separate;
+            border-spacing: 5px;
+            font-size: 15px;
+            border-radius: 20px;
+            margin: 20px auto;
+        }
+
+        .info-table {
+            text-align: left;
+            border-spacing: 10px; /* A bit more spacing for info tables */
+            margin: 30px auto; /* Adjusted margin as h2 is removed */
+        }
+
+        .info-table td {
+            text-align: center; /* Center content in info table cells */
+            vertical-align: top;
+            padding: 8px;
+        }
+
+        .parents-table {
+            margin: 20px auto;
+            border-spacing: 5px;
+        }
+
+        .parents-table td {
+            padding: 5px;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        td b {
+            font-weight: 600;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            color: #2c3e50;
+            display: block; /* Makes <b> take full width for better centering */
+            margin-top: 5px;
+            margin-bottom: 5px; /* Added for spacing */
+        }
+
+        .heart-container img { /* Specific for heart, no border/shadow */
+            animation: heartbeat 2s ease-in-out infinite;
+            border: none;
+            box-shadow: none;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .family-member {
+            transition: all 0.3s ease;
+            animation: fadeIn 0.6s ease-out;
+        }
+          /* Stagger animations for up to 4 columns */
+        .family-member:nth-child(1) { animation-delay: 0.1s; }
+        .family-member:nth-child(2) { animation-delay: 0.2s; }
+        .family-member:nth-child(3) { animation-delay: 0.3s; }
+        .family-member:nth-child(4) { animation-delay: 0.4s; }
+
+
+        .contact-info {
+            font-size: 14px;
+            margin-top: 8px;
+            color: #34495e;
+            display: flex; /* Use flexbox for inline alignment */
+            justify-content: center; /* Center items horizontally */
+            align-items: center; /* Center items vertically */
+            margin-bottom: 5px; /* Spacing below contact */
+        }
+
+        .navigation {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            right: 10px;
+            display: flex;
+            justify-content: space-between;
+            z-index: 1000;
+        }
+
+        .nav-button {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            padding: 10px;
+            transition: all 0.3s ease;
+            border: 2px solid #d4af37;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            text-decoration: none;
+            display: inline-block; /* Ensure proper rendering */
+        }
+
+        .nav-button:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+
+        .nav-button img {
+            border: none;
+            box-shadow: none;
+            width: 40px; /* Standard nav icon size */
+            height: 40px; /* Standard nav icon size */
+        }
+
+        .nav-button img:hover {
+            transform: none; /* Prevent double scaling if img itself has hover */
+        }
+
+        @media (max-width: 768px) {
+            body {
+                font-size: 16px;
+                padding: 10px;
+            }
+
+            h1 {
+                padding: 10px 20px;
+                font-size: 1.5em;
+            }
+
+            img[width="200"] {
+                width: 150px !important; /* Smaller for mobile */
+                height: 150px !important;
+            }
+            img[width="300"] {
+                width: 180px !important; /* Smaller for mobile */
+                height: 180px !important;
+            }
+
+            .navigation {
+                left: 10px;
+                right: 10px;
+                bottom: 10px;
+            }
+
+            table, .info-table, .parents-table {
+                border-spacing: 5px;
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+<body style="background-color:#e8cf89; font-size: 20px;font-family: 'Jost', sans-serif; ">
+      <center>
+        <h1 style="background:#2f4596; color:white; display:inline-block;padding: 5px; border:3px solid black; border-radius:20px;">Know your Bharlarukha family!</h1>
+    
+<center>
+<table style="margin:10px;">
+  
+<tr>
+    <td><img src="02/laxman.jpg" width="230" height="230"> </td></a>
+    <td class="heart-container"><img src="01/heart.gif" width="50" height="50" alt="Heart"></td>
+    <td><img src="02/sita.jpg" width="230" height="230"></td>
+</tr>
+
+<tr>
+	<td><b>Laxman Gyawali (लक्ष्मण ज्ञवाली)</b></td>
+  <td></td>
+	<td><b>Sita Gyawali (सिता ज्ञवाली)</b></td>
+</tr>
+<tr>
+  <td>&#x260E; 9857030749<a href="https://www.facebook.com/profile.php?id=100006659594725"><img src="01/facebook.png" width="20"height="20"></td>
+    <td></td>
+<td>&#x260E; 9847024152 <a href="https://www.facebook.com/sita.gyawali.14203"><img src="01/facebook.png" width="20"height="20"></td>
+</tr>
+<tr>
+  <td>DOB : 2014-06-15</td>
+   <td></td>
+  <td>DOB : 2021-03-20</td>
+</tr>
+<tr>
+  <td>Tue  01-Oct-1957</td>
+  <td></td>
+  <td>Fri  03-Jul-1964</td>
+  <tr>
+
+
+</center>
+</tr>
+ </table>
+
+	
+ <table>
+  
+   <tr>
+    <td><a href="page11.html"><img src="02/sudan.jpg" width="200" height="200"> </td></a>
+    <td><img src="02/sudeep.jpg" width="200" height="200"></td>
+    </tr>
+
+
+    <tr>
+    <td><b>Madhu Sudhan Gyawali (मधु सुधन ज्ञवाली)</b></td>
+    <td><b>Suddep  Gyawali (सुदीप ज्ञवाली)</b></td>
+    </tr>
+
+  <tr>
+    <td>DOB : 2041-01-29 </td>
+    <td>DOB : 2044-02-19 </td>
+      
+ </tr>
+ <tr>
+  <td>Fri  11-May-1984</td>
+  <td>Tue  02-Jun-1987</td>
+  <tr>
+<tr>
+<td>Children:1</td>
+
+</tr>
+
+
+<tr>
+<td><b>Wife:Pratistha Pokhrel </b></td></a>
+</tr>
+<tr>
+
+<td>&#x260E;+19139537901/+16823651607 <a href="https://www.facebook.com/madhu.s.gyawali"><img src="01/facebook.png" width="20"height="20"></td>
+<td>&#x260E; 9813321861 <a href="https://www.facebook.com/suddep.gyawali"><img src="01/facebook.png" width="20"height="20"></td>
+
+
+</tr></table>
+
+   <div class="navigation">
+    <a href="index.html" class="nav-button"><img src="01/home.jpg" width="40px" height="40px" alt="Home"></a>
+    <button onclick="history.back()" class="nav-button"><img src="01/back.jpg" width="40px" height="40px" alt="Back"></button>
+</div>
+</center>
+</body>
+</html>
